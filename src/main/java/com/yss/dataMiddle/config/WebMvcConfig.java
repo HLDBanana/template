@@ -1,18 +1,9 @@
 package com.yss.dataMiddle.config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/**
- * @ClassName WebMvcConfigurerAdapter
- * @Description
- * @Auto HANLIDONG
- * @Date 2019-7-12 10:11)
- */
-@Configuration
-class WebMvcConfig extends WebMvcConfigurerAdapter {
-
+public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
@@ -21,6 +12,4 @@ class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
-
-
 }
